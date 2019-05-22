@@ -16,3 +16,4 @@ South==1.0.2
 urllib3==1.25.2
 whitenoise==3.3.0
 gunicorn==19.9.0
+dj-database-url==0.5.0
