@@ -1,0 +1,26 @@
+{% extends 'news/base.html' %}
+{% block search %}
+
+    <a href="{% url 'news_filter' pk=1 %}"><button>Неделя</button></a>
+    <a href="{% url 'news_filter' pk=2 %}"><button>Месяц</button></a>
+    <a href="{% url 'news_filter' pk=3 %}"><button>Все</button></a>
+{% endblock search %}
+{% block content %}
+
+
+	{% for obj in news %}
+	<div class="card mb-4">
+	  <img class="card-img-top" src="{{ obj.image_url|default_if_none:'#' }}" alt="Card image cap">
+	  <div class="card-body">
+		<h2 class="card-title">{{ obj.title }}</h2>
+		<p class="card-text">{{ obj.text_min|safe }}</p>
+		<a href="{% url 'new_single' pk=obj.id %}" class="btn btn-primary">Read More &rarr;</a>
+	  </div>
+	  <div class="card-footer text-muted">
+		<span>{{ obj.created }}</span>
+		<a href="#">{{obj.user}}</a>
+	  </div>
+	</div>
+	{% endfor %}
+
+{% endblock content %}
