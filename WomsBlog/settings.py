@@ -141,9 +141,9 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/accounts/login/'
+#LOGIN_URL = '/accounts/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 
-import  dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#import  dj_database_url
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
